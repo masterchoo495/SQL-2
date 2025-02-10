@@ -50,7 +50,11 @@ WHERE length > (SELECT AVG(length) FROM film)
 
 Текст запроса:
 ```
-
+SELECT month(payment_date), SUM(amount), COUNT(rental_id)
+FROM payment
+GROUP BY month(payment_date)
+ORDER BY SUM(amount) DESC 
+LIMIT 1
 ```
 
 Скриншот из DBeaver:
