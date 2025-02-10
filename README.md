@@ -7,6 +7,22 @@
 
 ### Решение
 
+Текст запроса:
+```
+SELECT CONCAT(s.first_name, ' ', s.last_name) AS manager, c.city AS city, COUNT(c2.customer_id) AS customers
+FROM staff s
+INNER JOIN store s2 ON s2.manager_staff_id = s.staff_id 
+INNER JOIN customer c2 ON c2.store_id = s2.store_id 
+INNER JOIN address a ON a.address_id = s2.address_id 
+INNER JOIN city c ON c.city_id = a.city_id
+GROUP BY s2.store_id
+HAVING customers  > 300
+```
+
+Скриншот из DBeaver:
+![alt text](https://github.com/masterchoo495/SQL-2/blob/main/001.png)
+
+---
 
 ### Задание 2
 
@@ -14,6 +30,17 @@
 
 ### Решение
 
+Текст запроса:
+```
+SELECT COUNT(film_id)
+FROM film
+WHERE length > (SELECT AVG(length) FROM film)
+```
+
+Скриншот из DBeaver:
+![alt text](https://github.com/masterchoo495/SQL-2/blob/main/002.png)
+
+---
 
 ### Задание 3
 
@@ -21,7 +48,15 @@
 
 ### Решение
 
+Текст запроса:
+```
 
+```
+
+Скриншот из DBeaver:
+![alt text](https://github.com/masterchoo495/SQL-2/blob/main/003.png)
+
+---
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
