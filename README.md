@@ -69,6 +69,25 @@ LIMIT 1
 
 Посчитайте количество продаж, выполненных каждым продавцом. Добавьте вычисляемую колонку «Премия». Если количество продаж превышает 8000, то значение в колонке будет «Да», иначе должно быть значение «Нет».
 
+### Решение
+
+Текст запроса:
+```
+SELECT CONCAT(s.first_name, ' ', s.last_name) as sailer, COUNT(rental_id) AS sales_number,
+	CASE
+		WHEN COUNT(rental_id) > 8000 THEN 'Yes'
+		ELSE 'No'
+	END AS bonus
+FROM staff s
+INNER JOIN payment p ON p.staff_id = s.staff_id 
+GROUP BY sailer
+```
+
+Скриншот из DBeaver:
+![alt text](https://github.com/masterchoo495/SQL-2/blob/main/004.png)
+
+---
+
 ### Задание 5*
 
 Найдите фильмы, которые ни разу не брали в аренду.
