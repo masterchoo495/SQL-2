@@ -58,7 +58,7 @@ LIMIT 1
 ```
 
 Скриншот из DBeaver:
-![alt text](https://github.com/masterchoo495/SQL-2/blob/main/003.png)
+![alt text](https://github.com/masterchoo495/SQL-2/blob/main/003_new.png)
 
 ---
 
