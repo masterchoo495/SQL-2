@@ -50,9 +50,9 @@ WHERE length > (SELECT AVG(length) FROM film)
 
 Текст запроса:
 ```
-SELECT month(payment_date), SUM(amount), COUNT(rental_id)
+SELECT DATE_FORMAT(payment_date, '%M %Y'), SUM(amount), COUNT(rental_id)
 FROM payment
-GROUP BY month(payment_date)
+GROUP BY DATE_FORMAT(payment_date, '%M %Y')
 ORDER BY SUM(amount) DESC 
 LIMIT 1
 ```
